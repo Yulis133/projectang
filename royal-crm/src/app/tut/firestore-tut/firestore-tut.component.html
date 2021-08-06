@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSubmit()">
+  <textarea>
+    [(ngModel)]="form.object"
+    name="object"
+    id=''
+    cols="50"
+    rows="10"
+  </textarea>
+
+  <br />
+
+  <label for="id">ID</label>
+  <input type="text" id="id" name="idValue" [(ngModel)]="form.idValue" />
+</form>
+
+<button (click)="add()">add</button>
+<button (click)="delete()">delete</button>
+<button (click)="set()">set</button>
+<button (click)="update()">update</button>
+<button (click)="get()">get</button>
+<button (click)="getAll()">getAll</button>
+<!-- <button (click)="snapshot()">snapshot</button>
+<button (click)="snapshotAll()">snapshot all</button> -->
+
+<br /><br />
+
+<details>
+  <summary>value changes resaults</summary>
+
+  <pre>{{ valueChangesResaults | async | json }}</pre>
+</details>

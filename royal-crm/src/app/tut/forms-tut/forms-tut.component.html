@@ -1,0 +1,39 @@
+<br /><br /><br />
+
+<input
+  type="text"
+  [(ngModel)]="value"
+  #inp="ngModel"
+  minlength="2"
+  maxlength="10"
+  required
+  pattern="^0\w{8,9}$"
+/>
+
+<h2>touched when user got in and out of focus</h2>
+<ul>
+  <li>touched: {{ inp.touched }}</li>
+  <li>untouched: {{ inp.untouched }}</li>
+</ul>
+
+<br />
+<h2>every time the content changes</h2>
+<ul>
+  <li>pristine:{{ inp.pristine }}</li>
+  <li>dirty:{{ inp.dirty }}</li>
+</ul>
+
+<h2>enabled or desabled based on the attribute 'disabled'</h2>
+<ul>
+  <li>enabled:{{ inp.enabled }}</li>
+  <li>disabled:{{ inp.disabled }}</li>
+</ul>
+
+<h2>valid is true all pass validation and error is null</h2>
+<ul>
+  <li>valid:{{ inp.enabled }}</li>
+  <li>invalid:{{ inp.disabled }}</li>
+  <li>
+    <pre>{{ inp.error | json }}</pre>
+  </li>
+</ul>
